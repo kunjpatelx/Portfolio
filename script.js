@@ -11,13 +11,13 @@ canvas.height = window.innerHeight;
 // Characters to use (Matrix-style)
 const matrixChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
 const fontSize = 16;
-const columns = canvas.width / fontSize;
+const columns = canvas.width / (fontSize / 2); // Tighter spacing
 const drops = Array(Math.floor(columns)).fill(1);
 
 // Animation loop
 function draw() {
     // Semi-transparent black fill to fade old characters
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillStyle = Math.random() > 0.5 ? "#00ff00" : "#00cc00";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Green text
@@ -43,9 +43,9 @@ function animate() {
     draw();
     frameCount++;
     // Fade canvas opacity after 5 seconds (300 frames at 60fps)
-    if (frameCount === 300) {
-        canvas.style.transition = "opacity 2s";
-        canvas.style.opacity = "0.2"; // Subtle loop after initial wow
+    if (frameCount === 180) { // 3 seconds at 60fps
+        canvas.style.transition = "opacity 1s";
+        canvas.style.opacity = "0.2";
     }
     requestAnimationFrame(animate);
 }
