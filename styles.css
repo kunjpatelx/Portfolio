@@ -158,4 +158,21 @@ footer {
     border-top: 1px solid #00ff00;
     position: relative;
     z-index: 1;
+
+
 }
+/* Add to styles.css */
+.tx-item {
+    background: #1a1a1a;
+    border: 1px solid #00ff00;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.tx-item p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+
