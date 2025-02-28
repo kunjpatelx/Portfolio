@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Courier New', monospace;
+    font-family: 'Didot', serif;
     background: #000;
     color: #fff;
     line-height: 1.6;
@@ -68,15 +68,18 @@ h2 {
     text-shadow: 0 0 3px #00ff00;
 }
 
+h3, h4, .tile p, .tile .details p {
+    font-family: 'Didot', serif;
+    color: #ccc;
+}
+
 h3 {
     font-size: 20px;
-    color: #fff;
     margin-bottom: 10px;
 }
 
 h4 {
     font-size: 16px;
-    color: #ccc;
     margin: 10px 0 5px;
 }
 
@@ -95,18 +98,16 @@ h4 {
     padding: 20px;
     border: 1px solid #00ff00;
     border-radius: 5px;
-    opacity: 0; /* For Anime.js animation */
+    opacity: 0;
 }
 
 .tile .overview {
     font-size: 16px;
-    color: #ccc;
     margin-bottom: 15px;
 }
 
 .tile .details {
     font-size: 14px;
-    color: #ccc;
 }
 
 .hidden {
@@ -117,6 +118,7 @@ h4 {
     background: none;
     border: none;
     color: #00ff00;
+    font-family: 'Didot', serif;
     font-weight: bold;
     cursor: pointer;
     padding: 5px 0;
@@ -165,16 +167,23 @@ h4 {
     text-decoration: none;
     border-radius: 3px;
     font-weight: bold;
+    font-family: 'Didot', serif;
 }
 
 .project-card a:hover {
     background: #00cc00;
 }
 
+.solbagfumbler-section {
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 0;
+}
+
 .github {
     text-align: center;
     margin-bottom: 40px;
-    opacity: 0; /* For ScrollTrigger */
+    opacity: 0;
 }
 
 .github-btn {
@@ -185,6 +194,7 @@ h4 {
     text-decoration: none;
     border-radius: 3px;
     font-weight: bold;
+    font-family: 'Didot', serif;
     transition: background 0.3s;
 }
 
@@ -195,13 +205,14 @@ h4 {
 .resume-download {
     text-align: center;
     margin-bottom: 40px;
-    opacity: 0; /* For ScrollTrigger */
+    opacity: 0;
 }
 
 .resume-download a {
     color: #00ff00;
     text-decoration: none;
     font-weight: bold;
+    font-family: 'Didot', serif;
 }
 
 .resume-download a:hover {
@@ -216,4 +227,12 @@ footer {
     border-top: 1px solid #00ff00;
     position: relative;
     z-index: 1;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    .tile-grid { grid-template-columns: 1fr; }
+    .project-grid { grid-template-columns: 1fr; }
 }
