@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.8/dist/framer-motion.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.95.3/dist/web/index.js"></script>
 </head>
 <body>
     <canvas id="matrixCanvas"></canvas>
@@ -46,15 +46,18 @@
                     <p class="overview">5+ years in IT support and deployment.</p>
                     <div class="details hidden">
                         <h4>Bioscript Solutions, Moncton, NB</h4>
-                        <p>IT Support Specialist Tier 2, Feb 2024 - Nov 2024</p>
+                        <p>IT Support Specialist Tier 2</p>
+                        <p>Feb 2024 - Nov 2024</p>
                         <p>- Resolved hardware/software issues for pharmacy staff.</p>
                         <p>- Managed AD user setups and support tickets.</p>
                         <h4>Majorel, Waterloo, ON</h4>
-                        <p>IT Support Specialist / Deployment Admin, Sep 2020 - Feb 2024</p>
+                        <p>IT Support Specialist / Deployment Admin</p>
+                        <p>Sep 2020 - Feb 2024</p>
                         <p>- Managed workstation deployments for Windows/Mac.</p>
                         <p>- Provided Azure cloud support and ticket resolution.</p>
                         <h4>OVInfotech, Ahmedabad, IN</h4>
-                        <p>Support Specialist, Jan 2016 - Feb 2018</p>
+                        <p>Support Specialist</p>
+                        <p>Jan 2016 - Feb 2018</p>
                         <p>- Supported software deployments and end-user training.</p>
                     </div>
                     <button class="toggle-btn" onclick="toggleDetails(this)">Access Data</button>
@@ -64,9 +67,11 @@
                     <p class="overview">Formal IT and development training.</p>
                     <div class="details hidden">
                         <p>Conestoga College, Kitchener, ON</p>
-                        <p>Enterprise Content Management, May 2019 - Aug 2020</p>
+                        <p>Enterprise Content Management</p>
+                        <p>May 2019 - Aug 2020</p>
                         <p>GLS University, Ahmedabad, IN</p>
-                        <p>Bachelor of Computer Applications, Jun 2015 - Apr 2018</p>
+                        <p>Bachelor of Computer Applications</p>
+                        <p>Jun 2015 - Apr 2018</p>
                     </div>
                     <button class="toggle-btn" onclick="toggleDetails(this)">Access Data</button>
                 </div>
@@ -101,6 +106,10 @@
                     <a href="#" target="_blank">Coming Soon</a>
                 </div>
             </div>
+        </section>
+        <section class="solbagfumbler-section scroll-section">
+            <h2>Latest from SolBagFumbler</h2>
+            <p id="wallet-balance">Fetching wallet balance...</p>
         </section>
         <section class="github scroll-section">
             <h2>Code Repository</h2>
