@@ -48,3 +48,31 @@ window.addEventListener("resize", () => {
     drops.length = Math.floor(canvas.width / fontSize);
     drops.fill(1);
 });
+
+// Typing Animation Logic
+document.addEventListener("DOMContentLoaded", () => {
+    const tagline = document.getElementById("tagline");
+    const resumeLine1 = document.getElementById("resume-line1");
+    const resumeLine2 = document.getElementById("resume-line2");
+    const resumeLine3 = document.getElementById("resume-line3");
+
+    const texts = [
+        { element: tagline, content: "IT Support Specialist | Code Weaver" },
+        { element: resumeLine1, content: "Kunj Patel - IT Support Specialist" },
+        { element: resumeLine2, content: "Experience: 3+ years deploying and troubleshooting IT systems" },
+        { element: resumeLine3, content: "Skills: Hardware/Software Support, Network Diagnostics, Windows/Linux, TeamSync" }
+    ];
+
+    let delay = 0;
+    texts.forEach(({ element, content }, index) => {
+        setTimeout(() => {
+            element.textContent = content;
+            element.classList.add("typing");
+            // Remove blinking cursor after animation ends
+            element.addEventListener("animationend", () => {
+                element.style.borderRight = "none";
+            }, { once: true });
+        }, delay);
+        delay += 2500; // stagger each line by 2.5 seconds
+    });
+});
