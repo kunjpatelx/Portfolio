@@ -8,57 +8,107 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Didot&display=swap" rel="stylesheet">
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.8/dist/framer-motion.min.js"></script>
 </head>
 <body>
     <canvas id="matrixCanvas"></canvas>
     <header>
-        <h1>KUNJ PATEL</h1>
-        <p>IT Support Specialist | Code Weaver</p>
+        <h1 id="name-header">KUNJ PATEL</h1>
+        <p id="tagline">IT SUPPORT SPECIALIST | CODE WEAVER</p>
+        <p class="contact">kunjpatelx@gmail.com</p>
     </header>
     <main>
-        <section class="projects">
+        <section class="resume-tiles">
+            <h2>Datafeed</h2>
+            <div class="tile-grid">
+                <div class="tile" data-anime="skills">
+                    <h3>Skills</h3>
+                    <p class="overview">Core competencies in IT and development.</p>
+                    <div class="details hidden">
+                        <p>- Software Deployment & Patch Management (Jamf)</p>
+                        <p>- Troubleshooting Proficiency</p>
+                        <p>- ServiceNow, JIRA</p>
+                        <p>- Azure Cloud, Active Directory Management</p>
+                        <p>- Deployment Tools: Jamf, Intune</p>
+                        <p>- TCP/IP, UDP, ICMP, DNS, DHCP</p>
+                        <p>- Windows System Administration</p>
+                        <p>- Technical Documentation</p>
+                        <p>- Excellent Communication & Interpersonal Skills</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleDetails(this)">Access Data</button>
+                </div>
+                <div class="tile" data-anime="experience">
+                    <h3>Experience</h3>
+                    <p class="overview">5+ years in IT support and deployment.</p>
+                    <div class="details hidden">
+                        <h4>Bioscript Solutions, Moncton, NB</h4>
+                        <p>IT Support Specialist Tier 2, Feb 2024 - Nov 2024</p>
+                        <p>- Resolved hardware/software issues for pharmacy staff.</p>
+                        <p>- Managed AD user setups and support tickets.</p>
+                        <h4>Majorel, Waterloo, ON</h4>
+                        <p>IT Support Specialist / Deployment Admin, Sep 2020 - Feb 2024</p>
+                        <p>- Managed workstation deployments for Windows/Mac.</p>
+                        <p>- Provided Azure cloud support and ticket resolution.</p>
+                        <h4>OVInfotech, Ahmedabad, IN</h4>
+                        <p>Support Specialist, Jan 2016 - Feb 2018</p>
+                        <p>- Supported software deployments and end-user training.</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleDetails(this)">Access Data</button>
+                </div>
+                <div class="tile" data-anime="education">
+                    <h3>Education</h3>
+                    <p class="overview">Formal IT and development training.</p>
+                    <div class="details hidden">
+                        <p>Conestoga College, Kitchener, ON</p>
+                        <p>Enterprise Content Management, May 2019 - Aug 2020</p>
+                        <p>GLS University, Ahmedabad, IN</p>
+                        <p>Bachelor of Computer Applications, Jun 2015 - Apr 2018</p>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleDetails(this)">Access Data</button>
+                </div>
+            </div>
+        </section>
+        <section class="projects scroll-section">
             <h2>Projects</h2>
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-motion="card1">
                     <h3>BreakBuddy</h3>
                     <p>A tool to hack burnout with timed breaks.</p>
                     <a href="https://kunjpatelx.github.io/BreakBuddy/" target="_blank">Enter the Matrix</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-motion="card2">
                     <h3>SolBagFumbler</h3>
                     <p>A Solana wallet tracker with retro flair—work in progress.</p>
                     <a href="https://kunjpatelx.github.io/SolBagFumbler/" target="_blank">Hack the Chain</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-motion="card3">
                     <h3>Project 3</h3>
                     <p>In development—watch this space.</p>
                     <a href="#" target="_blank">Coming Soon</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-motion="card4">
                     <h3>Project 4</h3>
                     <p>In development—watch this space.</p>
                     <a href="#" target="_blank">Coming Soon</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-motion="card5">
                     <h3>Project 5</h3>
                     <p>In development—watch this space.</p>
                     <a href="#" target="_blank">Coming Soon</a>
                 </div>
             </div>
         </section>
-        <section class="resume">
-            <h2>Resume Datafeed</h2>
-            <div class="resume-content">
-                <p>Kunj Patel - IT Support Specialist</p>
-                <p>Experience: 3+ years deploying and troubleshooting IT systems</p>
-                <p>Skills: Hardware/Software Support, Network Diagnostics, Windows/Linux, TeamSync</p>
-                <p><a href="resume.pdf" download>Download Full Datastream [My Resume]</a></p>
-            </div>
-        </section>
-        <section class="github">
+        <section class="github scroll-section">
             <h2>Code Repository</h2>
             <p>Access my digital signature.</p>
             <a href="https://github.com/kunjpatelx" target="_blank" class="github-btn">GitHub Portal</a>
+        </section>
+        <section class="resume-download scroll-section">
+            <p><a href="resume.pdf" download>Download Full Datastream [My Resume]</a></p>
         </section>
     </main>
     <footer>
