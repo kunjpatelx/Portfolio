@@ -34,13 +34,14 @@ header {
 }
 
 h1 {
+    font-family: 'Didot', serif;
     font-size: 36px;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 5px #00ff00;
 }
 
-header p {
+#tagline {
     font-size: 18px;
     color: #ccc;
 }
@@ -54,6 +55,7 @@ main {
 }
 
 h2 {
+    font-family: 'Didot', serif;
     font-size: 28px;
     margin-bottom: 20px;
     color: #00ff00;
@@ -158,21 +160,21 @@ footer {
     border-top: 1px solid #00ff00;
     position: relative;
     z-index: 1;
-
-
-}
-/* Add to styles.css */
-.tx-item {
-    background: #1a1a1a;
-    border: 1px solid #00ff00;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
 }
 
-.tx-item p {
-    font-size: 14px;
-    color: #ccc;
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
 }
 
+@keyframes blink {
+    50% { border-color: transparent; }
+}
 
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #00ff00;
+    animation: typing 2s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
