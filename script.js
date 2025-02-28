@@ -30,17 +30,17 @@ function draw() {
 }
 
 let frameCount = 0;
-function animate() {
+function animateCanvas() {
     draw();
     frameCount++;
     if (frameCount === 300) {
         canvas.style.transition = "opacity 2s";
         canvas.style.opacity = "0.2";
     }
-    requestAnimationFrame(animate);
+    requestAnimationFrame(animateCanvas);
 }
 
-animate();
+animateCanvas();
 
 window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
@@ -48,3 +48,53 @@ window.addEventListener("resize", () => {
     drops.length = Math.floor(canvas.width / fontSize);
     drops.fill(1);
 });
+
+// GSAP Header Animation
+gsap.from("#name-header", { opacity: 0, y: -50, duration: 1, delay: 0.5, ease: "power2.out" });
+gsap.from("#tagline", { opacity: 0, y: 20, duration: 1, delay: 1, ease: "power2.out" });
+gsap.from(".contact", { opacity: 0, y: 20, duration: 1, delay: 1.5, ease: "power2.out" });
+
+// Anime.js Tile Animation
+document.querySelectorAll(".tile").forEach((tile, index) => {
+    anime({
+        targets: tile,
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 1000,
+        delay: index * 500, // Staggered reveal
+        easing: "easeOutQuad"
+    });
+});
+
+// Framer Motion for Project Cards (via vanilla JS for simplicity)
+document.querySelectorAll(".project-card").forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        gsap.to(card, { scale: 1.05, rotateX: 5, duration: 0.3, ease: "power1.out" });
+    });
+    card.addEventListener("mouseleave", () => {
+        gsap.to(card, { scale: 1, rotateX: 0, duration: 0.3, ease: "power1.out" });
+    });
+});
+
+// ScrollTrigger for Sections
+gsap.registerPlugin(ScrollTrigger);
+
+document.querySelectorAll(".scroll-section").forEach(section => {
+    gsap.from(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out"
+    });
+});
+
+function toggleDetails(button) {
+    const details = button.previousElementSibling;
+    details.classList.toggle("hidden");
+    button.textContent = details.classList.contains("hidden") ? "Access Data" : "Close Data";
+}
