@@ -153,10 +153,14 @@ h4 {
     margin-bottom: 10px;
 }
 
-.project-card p {
-    font-size: 16px;
+.project-preview {
+    font-size: 14px;
     color: #ccc;
     margin-bottom: 15px;
+    padding: 10px;
+    background: #222;
+    border-radius: 3px;
+    border: 1px solid #444;
 }
 
 .project-card a {
@@ -235,4 +239,5 @@ footer {
     h2 { font-size: 24px; }
     .tile-grid { grid-template-columns: 1fr; }
     .project-grid { grid-template-columns: 1fr; }
+    .project-preview { font-size: 12px; padding: 8px; }
 }
