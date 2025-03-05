@@ -23,14 +23,14 @@ for (let i = 0; i < particleCount; i++) {
 gsap.from("#name-header", { opacity: 0, y: -50, duration: 1, delay: 0.5, ease: "power2.out" });
 gsap.from("#tagline", { opacity: 0, y: 20, duration: 1, delay: 1, ease: "power2.out" });
 
-// Anime.js Tile Animation
-document.querySelectorAll(".tile").forEach((tile, index) => {
+// Anime.js Datafeed Animation
+document.querySelectorAll(".datafeed-section").forEach((section, index) => {
     anime({
-        targets: tile,
+        targets: section,
         opacity: [0, 1],
         translateY: [20, 0],
         duration: 1000,
-        delay: index * 500,
+        delay: index * 300,
         easing: "easeOutQuad"
     });
 });
