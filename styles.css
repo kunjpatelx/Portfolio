@@ -6,22 +6,37 @@
 
 body {
     font-family: 'Didot', serif;
-    background: #000;
+    background: #0a0a0a;
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
 }
 
-#matrixCanvas {
+#particle-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.8;
     pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #00ff00, transparent);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.3; }
+    50% { opacity: 0.7; }
+    100% { transform: translateY(-100vh); opacity: 0.3; }
 }
 
 header {
@@ -34,7 +49,6 @@ header {
 }
 
 h1 {
-    font-family: 'Didot', serif;
     font-size: 36px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -46,12 +60,6 @@ header p {
     color: #ccc;
 }
 
-.contact {
-    font-size: 16px;
-    color: #888;
-    margin-top: 5px;
-}
-
 main {
     max-width: 1000px;
     margin: 0 auto;
@@ -61,26 +69,16 @@ main {
 }
 
 h2 {
-    font-family: 'Didot', serif;
     font-size: 28px;
     margin-bottom: 20px;
     color: #00ff00;
     text-shadow: 0 0 3px #00ff00;
 }
 
-h3, h4, .tile p, .tile .details p {
-    font-family: 'Didot', serif;
-    color: #ccc;
-}
-
 h3 {
     font-size: 20px;
     margin-bottom: 10px;
-}
-
-h4 {
-    font-size: 16px;
-    margin: 10px 0 5px;
+    color: #ccc;
 }
 
 .resume-tiles {
@@ -99,36 +97,36 @@ h4 {
     border: 1px solid #00ff00;
     border-radius: 5px;
     opacity: 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
 }
 
 .tile .overview {
     font-size: 16px;
     margin-bottom: 15px;
+    color: #ccc;
 }
 
-.tile .details {
-    font-size: 14px;
-}
-
-.hidden {
-    display: none;
-}
-
-.toggle-btn {
-    background: none;
+.toggle-btn a {
+    background: #00ff00;
     border: none;
-    color: #00ff00;
-    font-family: 'Didot', serif;
-    font-weight: bold;
+    color: #000;
+    padding: 8px 16px;
     cursor: pointer;
-    padding: 5px 0;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
 }
 
-.toggle-btn:hover {
-    text-decoration: underline;
+.toggle-btn a:hover {
+    background: #00cc00;
 }
 
-.projects {
+.projects, .solbagfumbler-section, .github {
     margin-bottom: 40px;
 }
 
@@ -144,13 +142,10 @@ h4 {
     border: 1px solid #00ff00;
     border-radius: 5px;
     transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
 }
 
 .project-card h3 {
-    font-size: 20px;
     color: #fff;
-    margin-bottom: 10px;
 }
 
 .project-preview {
@@ -163,7 +158,7 @@ h4 {
     border: 1px solid #444;
 }
 
-.project-card a {
+.project-card a, .github-btn {
     display: inline-block;
     padding: 8px 16px;
     background: #00ff00;
@@ -171,56 +166,14 @@ h4 {
     text-decoration: none;
     border-radius: 3px;
     font-weight: bold;
-    font-family: 'Didot', serif;
 }
 
-.project-card a:hover {
+.project-card a:hover, .github-btn:hover {
     background: #00cc00;
 }
 
-.solbagfumbler-section {
+.solbagfumbler-section, .github {
     text-align: center;
-    margin-bottom: 40px;
-    opacity: 0;
-}
-
-.github {
-    text-align: center;
-    margin-bottom: 40px;
-    opacity: 0;
-}
-
-.github-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background: #00ff00;
-    color: #000;
-    text-decoration: none;
-    border-radius: 3px;
-    font-weight: bold;
-    font-family: 'Didot', serif;
-    transition: background 0.3s;
-}
-
-.github-btn:hover {
-    background: #00cc00;
-}
-
-.resume-download {
-    text-align: center;
-    margin-bottom: 40px;
-    opacity: 0;
-}
-
-.resume-download a {
-    color: #00ff00;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Didot', serif;
-}
-
-.resume-download a:hover {
-    text-decoration: underline;
 }
 
 footer {
@@ -233,11 +186,22 @@ footer {
     z-index: 1;
 }
 
-/* Media Query for Mobile */
+.footer-content a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
 @media (max-width: 768px) {
     h1 { font-size: 28px; }
     h2 { font-size: 24px; }
-    .tile-grid { grid-template-columns: 1fr; }
-    .project-grid { grid-template-columns: 1fr; }
+    .tile-grid, .project-grid { grid-template-columns: 1fr; }
     .project-preview { font-size: 12px; padding: 8px; }
 }
