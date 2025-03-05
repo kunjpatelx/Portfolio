@@ -8,18 +8,16 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Didot&display=swap" rel="stylesheet">
-    <!-- Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.95.3/dist/web/index.js"></script>
 </head>
 <body>
-    <canvas id="matrixCanvas"></canvas>
+    <div id="particle-container"></div> <!-- New background -->
     <header>
         <h1 id="name-header">KUNJ PATEL</h1>
         <p id="tagline">IT SUPPORT SPECIALIST | CODE WEAVER</p>
-        <p class="contact">kunjpatelx@gmail.com</p>
     </header>
     <main>
         <section class="resume-tiles">
@@ -27,53 +25,18 @@
             <div class="tile-grid">
                 <div class="tile" data-anime="skills">
                     <h3>Skills</h3>
-                    <p class="overview">Core competencies in IT and development.</p>
-                    <div class="details hidden">
-                        <p>- Software Deployment & Patch Management (Jamf)</p>
-                        <p>- Troubleshooting Proficiency</p>
-                        <p>- ServiceNow, JIRA</p>
-                        <p>- Azure Cloud, Active Directory Management</p>
-                        <p>- Deployment Tools: Jamf, Intune</p>
-                        <p>- TCP/IP, UDP, ICMP, DNS, DHCP</p>
-                        <p>- Windows System Administration</p>
-                        <p>- Technical Documentation</p>
-                        <p>- Excellent Communication & Interpersonal Skills</p>
-                    </div>
-                    <button class="toggle-btn" onclick="toggleDetails(this)">Access Data</button>
+                    <p class="overview">A curated set of IT and development expertise.</p>
+                    <button class="toggle-btn"><a href="resume.pdf" download>Explore More</a></button>
                 </div>
                 <div class="tile" data-anime="experience">
                     <h3>Experience</h3>
-                    <p class="overview">5+ years in IT support and deployment.</p>
-                    <div class="details hidden">
-                        <h4>Bioscript Solutions, Moncton, NB</h4>
-                        <p>IT Support Specialist Tier 2</p>
-                        <p>Feb 2024 - Nov 2024</p>
-                        <p>- Resolved hardware/software issues for pharmacy staff.</p>
-                        <p>- Managed AD user setups and support tickets.</p>
-                        <h4>Majorel, Waterloo, ON</h4>
-                        <p>IT Support Specialist / Deployment Admin</p>
-                        <p>Sep 2020 - Feb 2024</p>
-                        <p>- Managed workstation deployments for Windows/Mac.</p>
-                        <p>- Provided Azure cloud support and ticket resolution.</p>
-                        <h4>OVInfotech, Ahmedabad, IN</h4>
-                        <p>Support Specialist</p>
-                        <p>Jan 2016 - Feb 2018</p>
-                        <p>- Supported software deployments and end-user training.</p>
-                    </div>
-                    <button class="toggle-btn" onclick="toggleDetails(this)">Access Data</button>
+                    <p class="overview">Years of solving tech challenges.</p>
+                    <button class="toggle-btn"><a href="resume.pdf" download>Explore More</a></button>
                 </div>
                 <div class="tile" data-anime="education">
                     <h3>Education</h3>
-                    <p class="overview">Formal IT and development training.</p>
-                    <div class="details hidden">
-                        <p>Conestoga College, Kitchener, ON</p>
-                        <p>Enterprise Content Management</p>
-                        <p>May 2019 - Aug 2020</p>
-                        <p>GLS University, Ahmedabad, IN</p>
-                        <p>Bachelor of Computer Applications</p>
-                        <p>Jun 2015 - Apr 2018</p>
-                    </div>
-                    <button class="toggle-btn" onclick="toggleDetails(this)">Access Data</button>
+                    <p class="overview">Foundations in IT and innovation.</p>
+                    <button class="toggle-btn"><a href="resume.pdf" download>Explore More</a></button>
                 </div>
             </div>
         </section>
@@ -83,35 +46,35 @@
                 <div class="project-card" data-motion="card1">
                     <h3>BreakBuddy</h3>
                     <div class="project-preview">
-                        <p>A tool to hack burnout with timed breaks and productivity boosts. Features a sleek, minimalistic interface for scheduling breaks.</p>
+                        <p>A tool to hack burnout with timed breaks and productivity boosts.</p>
                     </div>
                     <a href="https://kunjpatelx.github.io/BreakBuddy/" target="_blank">Enter the Matrix</a>
                 </div>
                 <div class="project-card" data-motion="card2">
                     <h3>SolBagFumbler</h3>
                     <div class="project-preview">
-                        <p>A Solana wallet tracker with retro flair—work in progress. Displays wallet balances and transactions in a Matrix-inspired design.</p>
+                        <p>A Solana wallet tracker with retro flair—work in progress.</p>
                     </div>
                     <a href="https://kunjpatelx.github.io/SolBagFumbler/" target="_blank">Hack the Chain</a>
                 </div>
                 <div class="project-card" data-motion="card3">
                     <h3>LEARN</h3>
                     <div class="project-preview">
-                        <p>A learning assistant powered by OpenAI, generating personalized schedules for mastering any topic with various techniques (e.g., 5-Step Mastery, Feynman).</p>
+                        <p>A learning assistant powered by OpenAI for mastering any topic.</p>
                     </div>
                     <a href="https://learn-psi-liart.vercel.app/" target="_blank">Learn More</a>
                 </div>
                 <div class="project-card" data-motion="card4">
                     <h3>Project 4</h3>
                     <div class="project-preview">
-                        <p>In development—watch this space for an innovative IT solution.</p>
+                        <p>In development—watch this space.</p>
                     </div>
                     <a href="#" target="_blank">Coming Soon</a>
                 </div>
                 <div class="project-card" data-motion="card5">
                     <h3>Project 5</h3>
                     <div class="project-preview">
-                        <p>In development—watch this space for an innovative IT solution.</p>
+                        <p>In development—watch this space.</p>
                     </div>
                     <a href="#" target="_blank">Coming Soon</a>
                 </div>
@@ -126,12 +89,13 @@
             <p>Access my digital signature.</p>
             <a href="https://github.com/kunjpatelx" target="_blank" class="github-btn">GitHub Portal</a>
         </section>
-        <section class="resume-download scroll-section">
-            <p><a href="resume.pdf" download>Download Full Datastream [My Resume]</a></p>
-        </section>
     </main>
     <footer>
-        <p>© 2025 Kunj Patel. Decoded from the Matrix.</p>
+        <div class="footer-content">
+            <p>Contact: <a href="mailto:kunjpatelx@gmail.com">kunjpatelx@gmail.com</a></p>
+            <p><a href="resume.pdf" download>Download Full Datastream [Resume]</a></p>
+            <p>© 2025 Kunj Patel. Crafted with Code.</p>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
