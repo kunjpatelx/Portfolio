@@ -150,10 +150,20 @@ h3 {
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
 }
 
-.datafeed-section p {
+.datafeed-section p, .datafeed-section .web-skills {
     font-size: 16px;
     color: #ccc;
     margin-top: 10px;
+}
+
+.web-skills {
+    font-style: italic;
+    color: #99ff99; /* Slightly lighter green for emphasis */
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(0, 255, 0, 0.1);
+    border-radius: 3px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
 }
 
 .solbagfumbler-section, .github {
@@ -202,5 +212,5 @@ footer {
     h1 { font-size: 28px; }
     h2 { font-size: 24px; }
     .project-grid, .datafeed-content { grid-template-columns: 1fr; }
-    .project-preview, .datafeed-section p { font-size: 14px; padding: 8px; }
+    .project-preview, .datafeed-section p, .web-skills { font-size: 14px; padding: 8px; }
 }
