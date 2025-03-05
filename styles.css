@@ -150,28 +150,10 @@ h3 {
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
 }
 
-.datafeed-section p, .datafeed-section ul {
+.datafeed-section p {
     font-size: 16px;
     color: #ccc;
     margin-top: 10px;
-}
-
-.datafeed-section ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-.datafeed-section ul li {
-    position: relative;
-    margin-bottom: 8px;
-}
-
-.datafeed-section ul li::before {
-    content: "•";
-    color: #00ff00;
-    font-size: 12px;
-    position: absolute;
-    left: -15px;
 }
 
 .solbagfumbler-section, .github {
